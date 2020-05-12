@@ -397,6 +397,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &217984059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: bc68161803d796443bd727c1d121b937,
+    type: 3}
+  m_PrefabInstance: {fileID: 1124821549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &370121737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: bc68161803d796443bd727c1d121b937,
+    type: 3}
+  m_PrefabInstance: {fileID: 780248460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &370121738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370121737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40cfa23527105c4591a94305cab1217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dominoePrefab: {fileID: 100000, guid: bc68161803d796443bd727c1d121b937, type: 3}
+  dominoeEnd: {fileID: 217984059}
+  NumCenterDom: 25
 --- !u!1 &409168891
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +510,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409168891}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -10.46, y: 5.22, z: 0}
+  m_LocalPosition: {x: -9.47, y: 5.22, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -924,6 +951,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -996,6 +1024,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f86b29fbdeb6b24694626c46208120b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dominoesStart: {fileID: 370121737}
+  force: 4
 --- !u!1 &967112969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1291,8 @@ GameObject:
   - component: {fileID: 1173529265}
   - component: {fileID: 1173529264}
   - component: {fileID: 1173529263}
+  - component: {fileID: 1173529267}
+  - component: {fileID: 1173529268}
   m_Layer: 0
   m_Name: Layer3_Wall
   m_TagString: Untagged
@@ -1329,6 +1373,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!54 &1173529267
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173529262}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!59 &1173529268
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173529262}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -16.2, y: 3.4, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &1257033097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,6 +1528,7 @@ GameObject:
   - component: {fileID: 1292997754}
   - component: {fileID: 1292997753}
   - component: {fileID: 1292997752}
+  - component: {fileID: 1292997756}
   m_Layer: 0
   m_Name: Normal_Box
   m_TagString: Untagged
@@ -1513,6 +1609,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1292997756
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292997751}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
 --- !u!1 &1361927788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1637,8 @@ GameObject:
   - component: {fileID: 1361927791}
   - component: {fileID: 1361927790}
   - component: {fileID: 1361927789}
+  - component: {fileID: 1361927793}
+  - component: {fileID: 1361927794}
   m_Layer: 0
   m_Name: FixBox
   m_TagString: Untagged
@@ -1605,6 +1719,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1361927793
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361927788}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 122
+  m_CollisionDetection: 0
+--- !u!138 &1361927794
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361927788}
+  m_ConnectedBody: {fileID: 0}
+  m_BreakForce: 9
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &1406311157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1945,7 @@ GameObject:
   - component: {fileID: 1639976142}
   - component: {fileID: 1639976141}
   - component: {fileID: 1639976140}
+  - component: {fileID: 1639976144}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1881,3 +2026,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1639976144
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639976139}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
