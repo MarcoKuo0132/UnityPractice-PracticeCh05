@@ -53,8 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\GoalTrigger.cs" />
+     <Compile Include="Assets\Script\MyCharacter.cs" />
      <Compile Include="Assets\Script\PushDomiones.cs" />
      <Compile Include="Assets\Script\SetDominoes.cs" />
+     <Compile Include="Assets\Script\SwitchCollisionEvent.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProject/PracticeCh05/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
